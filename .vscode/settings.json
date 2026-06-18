@@ -1,0 +1,130 @@
+{
+    //  Tampilan & Tema
+    "workbench.colorTheme": "Mayukai Reversal",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.indent": 10,
+    "workbench.startupEditor": "none",
+    "workbench.settings.applyToAllProfiles": [],
+
+    //  Font & Editor
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4,
+    "editor.lineHeight": 22,
+
+    //  Files
+    "files.autoSave": "afterDelay",
+
+    //  Prettier
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    "prettier.semi": true,
+    "prettier.trailingComma": "es5",
+    "prettier.printWidth": 100,
+
+    //  Formatter per Bahasa
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.tabSize": 4
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[dart]": {
+        "editor.defaultFormatter": "Dart-Code.dart-code",
+        "editor.formatOnSave": true
+    },
+
+    //  PHP Settings
+    "php.validate.executablePath": "C:\\laragon\\bin\\php\\php-8.3.30-Win32-vs16-x64\\php.exe",
+    "phpserver.browser": "chrome",
+    "phpserver.phpConfigPath": "C:\\laragon\\bin\\php\\php-8.3.30-Win32-vs16-x64\\php.ini",
+    "phpserver.phpPath": "C:\\laragon\\bin\\php\\php-8.3.30-Win32-vs16-x64\\php.exe",
+
+    //  Intelephense (PHP)
+    "intelephense.format.enable": true,
+    "intelephense.environment.includePaths": ["C:/xampp/htdocs"],
+
+    //  Five Server
+    "fiveServer.php.executable": "C:\\xampp\\php\\php.exe",
+    "fiveServer.php.ini": "C:\\xampp\\php\\php.ini",
+    "fiveServer.browser": ["chrome"],
+    "fiveServer.host": "localhost",
+    "window.zoomPerWindow": false,
+
+    //  Better Comments
+    "better-comments.tags": [
+        { "tag": "!", "color": "#FF2D00" },
+        { "tag": "?", "color": "#3498DB" },
+        { "tag": "//", "color": "#474747", "strikethrough": true },
+        { "tag": "todo", "color": "#FF8C00" },
+        { "tag": "*", "color": "#98C379" },
+        { "tag": "#", "color": "#0ABAB5" }
+    ],
+
+    //  Highlight Matching Tag
+    "highlight-matching-tag.customEmptyElements": [],
+    "highlight-matching-tag.highlightFromContent": true,
+
+    //  GitLens AI
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+    //  JSON Schemas
+    "json.schemas": [
+        {
+            "fileMatch": ["/myfile"],
+            "url": "schemaURL"
+        }
+    ],
+
+    //  Glass UI
+    "glassit.alpha": 255,
+
+    //  Editor Associations
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.mo": "default"
+    },
+
+    //  Live Reload
+    "live-reload.useHTTPS": {},
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.sideBar.location": "right",
+    "accessibility.signals.taskCompleted": {
+        "announcement": "off"
+    },
+    "accessibility.signals.lineHasInlineSuggestion": {
+        "sound": "off"
+    },
+    "codesnap.realLineNumbers": true,
+    "codesnap.showWindowTitle": true,
+    "codesnap.transparentBackground": true,
+    "window.zoomLevel": -1,
+    "accessibility.signals.terminalBell": {
+        "sound": "off"
+    },
+    "accessibility.signals.lineHasBreakpoint": {
+        "sound": "off"
+    },
+    "accessibility.signals.lineHasError": {
+        "sound": "off"
+    },
+    "accessibility.signals.terminalCommandSucceeded": {
+        "sound": "off"
+    },
+    "chatgpt.localeOverride": "id-ID",
+    "chatgpt.cliExecutable": "",
+    "workbench.secondarySideBar.showLabels": false
+}
