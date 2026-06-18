@@ -1,0 +1,21 @@
+stages:
+  - deploy
+
+deploy_dev:
+  stage: deploy
+  only:
+    - development
+  before_script:
+    - apt-get update -y
+    - apt-get install -y sshpass openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$DEPLOY_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H gitlab.com >> ~/.ssh/known_hosts
+    - ssh-keyscan -H 103.49.238.213 >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no deployer@103.49.238.213 \
+      "cd /var/www/shoescleanapidev.vrasapp.com/vras && git pull origin development && composer install --no-interaction --prefer-dist --optimize-autoloader && php artisan config:cache && php artisan queue:restart"

@@ -1,0 +1,95 @@
+classDiagram
+    class User {
+        <<Abstract>>
+        +UUID id
+        +String email
+        +String passwordHash
+        +String fullName
+        +DateTime createdAt
+        +login()
+        +logout()
+    }
+
+    class Employee {
+        +String employeeCode
+        +RoleType role
+        +Float salary
+        +assignOrder()
+        +updateOrderStatus()
+    }
+
+    class Customer {
+        +String phoneNumber
+        +String address
+        +Boolean isMember
+        +Int loyaltyPoints
+        +requestService()
+    }
+
+    User <|-- Employee : Inheritance
+    User <|-- Customer : Inheritance
+
+    class RoleType {
+        <<Enumeration>>
+        ADMIN
+        WASHER
+        CASHIER
+    }
+
+    class Service {
+        +UUID id
+        +String name
+        +String description
+        +Float basePrice
+        +Int estimatedDurationHours
+        +updatePrice()
+    }
+
+    class Order {
+        +String orderNumber
+        +DateTime orderDate
+        +OrderStatus status
+        +Float totalAmount
+        +calculateTotal()
+        +completeOrder()
+    }
+
+    class OrderStatus {
+        <<Enumeration>>
+        PENDING
+        WASHING
+        READY_FOR_PICKUP
+        COMPLETED
+        CANCELLED
+    }
+
+    class OrderItem {
+        +UUID id
+        +String shoeBrand
+        +String shoeColor
+        +String initialCondition
+        +String beforePhotoUrl
+        +String afterPhotoUrl
+        +Float priceAtTime
+        +Float subTotal
+    }
+
+    class Payment {
+        +UUID id
+        +Float amount
+        +String method
+        +DateTime paymentDate
+        +String status
+        +processPayment()
+        +generateReceipt()
+    }
+
+    %% Relationships
+    Customer "1" -- "*" Order : places (1-to-Many)
+    Employee "1" -- "*" Order : handles/washes (1-to-Many)
+    
+    Order "1" *-- "*" OrderItem : contains (Composition)
+    OrderItem "*" -- "1" Service : applies (Many-to-1)
+    
+    Order "1" -- "1" Payment : has (1-to-1)
+    Employee ..> RoleType : depends on
